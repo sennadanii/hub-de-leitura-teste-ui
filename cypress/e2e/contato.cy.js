@@ -1,9 +1,11 @@
+/// <reference types="cypress"/>
+
 describe('Funcionalidade: Contato', () => {
 
   beforeEach(() => {
     cy.visit('index.html')
   });
-  
+
   it('Deve preencher formulário de contato com sucesso', () => {
     cy.get('[name="name"]').type('Danielle Senna')
     cy.get('[name="email"]').type('senna@teste.com')
@@ -39,7 +41,6 @@ describe('Funcionalidade: Contato', () => {
     cy.get('[name="email"]').type('senna@teste.com')
     cy.get('[name="message"]').type('Mensagem de teste')
     cy.get('#btn-submit').click()
-    //Resultado Esperado
     cy.get('#alert-container').should('contain', 'Por favor, selecione o Assunto')
      });
 
@@ -49,7 +50,6 @@ describe('Funcionalidade: Contato', () => {
     cy.get('[name="subject"]').select('Parcerias')
     cy.get('[name="message"]').clear()
     cy.get('#btn-submit').click()
-    //Resultado Esperado
     cy.get('#alert-container').should('contain', 'Por favor, escreva sua Mensagem')
     });
   });
