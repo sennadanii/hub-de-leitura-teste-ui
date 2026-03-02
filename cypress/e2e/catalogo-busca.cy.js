@@ -18,5 +18,24 @@ describe('Funcionalidade: Busca no Catálogo', () => {
         cy.get('.card-title').should('contain', catalogo[2].livro)
 
     });
-    
+
+    it('Deve fazer a busca de um livro usando fixture', () => {
+        cy.fixture('livros').then((cat) => {
+            cy.get('#search-input').type(cat[2].livro)
+            cy.get('.card-title').should('contain', catalogo[2].livro)
+        })
+    });
+
+    it.only('Deve validar todos os livros da lista', () => {
+        cy.fixture('livros').then((cat) => {
+            cat.forEach(item=>{
+            cy.get('#search-input').clear().type(item.livro)
+
+
+
+            })
+        })
+        
+    });
+
 });

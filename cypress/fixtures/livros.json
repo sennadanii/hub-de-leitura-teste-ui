@@ -10,5 +10,13 @@
     {
         "livro": "O Hobbit",
         "categoria": "Aventura"
+    },
+    {
+        "livro": "A Divina Comédia",
+        "categoria": "Poesia"
+    },
+    {
+        "livro": "A Metamorfose",
+        "categoria": "ficção"
     }
 ]
